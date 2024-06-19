@@ -105,10 +105,10 @@ gen q=_n in 1/5
 gen c=_n in 1/100
 
 graph twoway connected B3 q, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$blue_cb") ytitle("Crecimiento real (%)") xtitle("Quintiles de ingreso per capita del hogar") yscale(r(-30(10)20)) ylabel(-30(10)20)
-graph export "/Users/horaciorueda/Documents/ech/gic_2019_2023_h.png", as(png) width(2400) replace
+// graph export "/Users/horaciorueda/Documents/ech/gic_2019_2023_h.png", as(png) width(2400) replace
 
-graph twoway connected C3 c, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$red_cb") ytitle("Crecimiento real (%)") xtitle("Quintiles de ingreso per capita del hogar") yscale(r(-30(10)20)) ylabel(-30(10)20)
-graph export "/Users/horaciorueda/Documents/ech/gic_2019_2023_p.png", as(png) width(2400) replace
+graph twoway connected C3 c, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$red_cb") ytitle("Crecimiento real (%)") xtitle("Centiles de ingreso per capita del hogar") yscale(r(-30(10)20)) ylabel(-30(10)20)
+graph export "/Users/horaciorueda/Documents/GitHub/ech_gic/figures/gic_2019_2023_p.png", as(png) width(2400) replace
 
 
 
