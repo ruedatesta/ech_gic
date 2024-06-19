@@ -104,7 +104,7 @@ replace C3=C3*100
 gen q=_n in 1/5
 gen c=_n in 1/10
 
-graph twoway connected C3 c, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$red_cb") ytitle("Crecimiento real (%)") xtitle("Deciles de ingreso per capita del hogar") yscale(r(-10(2)10)) ylabel(-10(2)10)
+graph twoway connected C3 c, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$red_cb") ytitle("Crecimiento real (%)") xtitle("Deciles de ingreso per capita del hogar") yscale(r(-10(2)10)) ylabel(-10(2)10) xlabel(1(1)10) lw(1) 
 graph export "/Users/horaciorueda/Documents/GitHub/ech_gic/figures/gic_2019_2023_d.png", as(png) width(2400) replace
 
 
