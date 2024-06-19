@@ -5,8 +5,8 @@ and another related [interview](https://enperspectiva.uy/en-perspectiva-programa
 
 To contribute to this discussion, I developed the following code to generate GICs at the quintile and centile levels.
 
-The primary conclusion is that the bottom percentiles experienced a decline in income growth over this period, while the middle and top percentiles showed either negligible or positive growth. 
-However, it is important to note that this analysis is still preliminary. Additionally, it is crucial to emphasize that this analysis does not imply any causation from policies to distributional outcomes.
+The primary conclusion is that the bottom deciles experienced a decline in income growth over this period, while the middle and top percentiles showed either negligible or positive growth. 
+However, it is important to note that this analysis is still preliminary. Additionally, this analysis does not imply any causation from policies to distributional outcomes.
 
 Feel free to take the code and keep contributing to the discussion.
 
