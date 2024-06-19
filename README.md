@@ -10,4 +10,4 @@ However, it is important to note that this analysis is still preliminary. Additi
 
 Feel free to take the code and keep contributing to the discussion.
 
-![alt text](https://github.com/ruedatesta/ech_gic/blob/main/figures/gic_2019_2023_p.png)
+<img src="https://github.com/ruedatesta/ech_gic/blob/main/figures/gic_2019_2023_p.png" alt="alt text" width="600"/>
