@@ -9,3 +9,5 @@ The primary conclusion is that the bottom percentiles experienced a decline in i
 However, it is important to note that this analysis is still preliminary. Additionally, it is crucial to emphasize that this analysis does not imply any causation from policies to distributional outcomes.
 
 Feel free to take the code and keep contributing to the discussion.
+
+![alt text](https://github.com/ruedatesta/ech_gic/blob/main/figures/gic_2019_2023_p.png)
