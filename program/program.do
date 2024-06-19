@@ -36,16 +36,16 @@ gen ingreso_hogar_per_capita_cte=.
 	replace ingreso_hogar_per_capita_cte=ingreso_hogar_per_capita/ipc
 	
 * Quintiles por hogar (pare replicar gráfico de exante)
-xtile qtile_hogar_19=ingreso_hogar_cte if year==2019 & nper==1 [w=w_ano], nq(5)
-xtile qtile_hogar_23=ingreso_hogar_cte if year==2023 & nper==1 [w=w_ano], nq(5)
+xtile qtile_hogar_19=ingreso_hogar_cte if year==2019 & nper==1 [fw=w_ano], nq(5)
+xtile qtile_hogar_23=ingreso_hogar_cte if year==2023 & nper==1 [fw=w_ano], nq(5)
 
 * Quintiles per capita
-xtile qtile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [w=w_ano], nq(5)
-xtile qtile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [w=w_ano], nq(5)
+xtile qtile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [fw=w_ano], nq(5)
+xtile qtile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [fw=w_ano], nq(5)
 
 * Percentiles per capita
-xtile ptile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [w=w_ano], nq(10)
-xtile ptile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [w=w_ano], nq(10)
+xtile ptile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [fw=w_ano], nq(10)
+xtile ptile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [fw=w_ano], nq(10)
 
 
 * Matriz de ingresos a pesos corrientes - hogares (replica exante)
@@ -55,7 +55,7 @@ forvalues q=1/5 {
 	local i=1
 	foreach y in 19 23 {
 		
-		sum ingreso_hogar_cte if year==20`y' & qtile_hogar_`y'==`q' & nper==1 [w=w_ano]
+		sum ingreso_hogar_cte if year==20`y' & qtile_hogar_`y'==`q' & nper==1 [fw=w_ano]
 		mat A[`i',`q']=r(mean)
 		local i=`i'+1
 	}
@@ -70,7 +70,7 @@ forvalues q=1/5 {
 	local i=1
 	foreach y in 19 23 {
 		
-		sum ingreso_hogar_per_capita_cte if year==20`y' & qtile_per_capita_`y'==`q' [w=w_ano]
+		sum ingreso_hogar_per_capita_cte if year==20`y' & qtile_per_capita_`y'==`q' [fw=w_ano]
 		mat B[`i',`q']=r(mean)
 		local i=`i'+1
 	}
@@ -86,7 +86,7 @@ forvalues q=1/10 {
 	local i=1
 	foreach y in 19 23 {
 		
-		sum ingreso_hogar_per_capita_cte if year==20`y' & ptile_per_capita_`y'==`q' [w=w_ano]
+		sum ingreso_hogar_per_capita_cte if year==20`y' & ptile_per_capita_`y'==`q' [fw=w_ano]
 		mat C[`i',`q']=r(mean)
 		local i=`i'+1
 	}
