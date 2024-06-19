@@ -44,8 +44,8 @@ xtile qtile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [w=w_ano], 
 xtile qtile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [w=w_ano], nq(5)
 
 * Percentiles per capita
-xtile ptile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [w=w_ano], nq(100)
-xtile ptile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [w=w_ano], nq(100)
+xtile ptile_per_capita_19=ingreso_hogar_per_capita_cte if year==2019 [w=w_ano], nq(10)
+xtile ptile_per_capita_23=ingreso_hogar_per_capita_cte if year==2023 [w=w_ano], nq(10)
 
 
 * Matriz de ingresos a pesos corrientes - hogares (replica exante)
@@ -80,9 +80,9 @@ forvalues q=1/5 {
 
 
 * Matriz de ingresos a pesos constantes - ingreso per capita del hogar y cenntiles
-mat def C=J(3,100,.)
+mat def C=J(3,10,.)
 
-forvalues q=1/100 {
+forvalues q=1/10 {
 	local i=1
 	foreach y in 19 23 {
 		
@@ -102,13 +102,10 @@ svmat C
 replace B3=B3*100
 replace C3=C3*100
 gen q=_n in 1/5
-gen c=_n in 1/100
+gen c=_n in 1/10
 
-graph twoway connected B3 q, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$blue_cb") ytitle("Crecimiento real (%)") xtitle("Quintiles de ingreso per capita del hogar") yscale(r(-30(10)20)) ylabel(-30(10)20)
-// graph export "/Users/horaciorueda/Documents/ech/gic_2019_2023_h.png", as(png) width(2400) replace
-
-graph twoway connected C3 c, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$red_cb") ytitle("Crecimiento real (%)") xtitle("Centiles de ingreso per capita del hogar") yscale(r(-30(10)20)) ylabel(-30(10)20)
-graph export "/Users/horaciorueda/Documents/GitHub/ech_gic/figures/gic_2019_2023_c.png", as(png) width(2400) replace
+graph twoway connected C3 c, yscale(titlegap(*10)) xscale(titlegap(*10)) graphregion(color(white)) color("$red_cb") ytitle("Crecimiento real (%)") xtitle("Deciles de ingreso per capita del hogar") yscale(r(-10(2)10)) ylabel(-10(2)10)
+graph export "/Users/horaciorueda/Documents/GitHub/ech_gic/figures/gic_2019_2023_d.png", as(png) width(2400) replace
 
 
 
